@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Fooddoor</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_location">LocationActivity</string>
+
+    <string name="default_web_client_id">YOUR_CLIENT_ID_HERE</string>
+
+    <string name="facebook_app_id">855217530253503</string>
+    <string name="fb_login_protocol_scheme">fb855217530253503</string>
+
+
+</resources>

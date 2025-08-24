@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Back to login -->
+
+        <TextView
+            android:id="@+id/srlogin"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:text="Back to login"
+            android:textColor="#777777"
+            android:textSize="15sp"
+            android:drawableStart="@drawable/backicon"
+            android:layout_marginTop="24dp" />
+
+        <!-- Sign Up Heading -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:textColor="@color/green"
+            android:layout_marginTop="24dp" />
+
+        <!-- Email Field -->
+        <EditText
+            android:id="@+id/srname"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Enter Name"
+            android:drawableStart="@drawable/shape"
+            android:padding="12dp"
+            android:background="@drawable/shape"
+            android:layout_marginTop="24dp" />
+
+        <!-- Password Field -->
+        <EditText
+            android:id="@+id/srnumber"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Mobile No."
+            android:drawableStart="@drawable/shape"
+            android:inputType="text"
+            android:padding="12dp"
+            android:background="@drawable/shape"
+            android:layout_marginTop="16dp" />
+
+        <!-- Confirm Password -->
+        <EditText
+            android:id="@+id/sremailid"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Email id"
+            android:drawableStart="@drawable/shape"
+            android:inputType="textEmailAddress"
+            android:padding="12dp"
+            android:background="@drawable/shape"
+            android:layout_marginTop="16dp" />
+
+        <!-- Phone Number -->
+        <EditText
+            android:id="@+id/srpassword"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="Password"
+            android:drawableStart="@drawable/shape"
+            android:inputType="textPassword"
+            android:padding="12dp"
+            android:background="@drawable/shape"
+            android:layout_marginTop="16dp" />
+
+        <!-- Sign Up Button -->
+        <Button
+            android:id="@+id/btnsubmit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Sign Up"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="@color/green"
+            android:layout_marginTop="24dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+</FrameLayout>

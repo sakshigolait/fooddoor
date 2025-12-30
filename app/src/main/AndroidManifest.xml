@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -19,70 +12,48 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDoor"
-        tools:targetApi="31" >
-
-        <!-- Google Maps API Key (tumhara original code) -->
-        <meta-data
-
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDvjhJLqaSQ8wOrW1yyQba6zqgKoyhzt3o" />
-
-        <!-- Facebook SDK App Id (NAYA ADD KIYA) -->
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/facebook_app_id" />
-
-        <meta-data
-            android:name="com.facebook.sdk.ClientToken"
-            android:value="6bd4c148de5d24b86add69fae59cf125" />
+        tools:targetApi="31">
 
 
-        <!-- Tumhari activities (unchanged) -->
         <activity
-            android:name=".LocationActivity"
-            android:exported="false"
-            android:label="@string/title_activity_location" />
+            android:name=".NotificationActivity"
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
+        <activity
+            android:name=".FavouriteActivity"
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
+        <activity
+            android:name=".SettingActivity"
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
+        <activity
+            android:name=".ContactusActivity"
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="false"
-            android:theme="@style/Theme.FoodDoor" />
+            android:theme="@style/Theme.FoodDoor"
+            />
         <activity
             android:name=".SignupActivity"
-            android:exported="false"
-            android:theme="@style/Theme.FoodDoor" />
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false"
-            android:theme="@style/Theme.FoodDoor" />
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.FoodDoor" >
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Facebook ke liye required activities (NAYA ADD KIYA) -->
-        <activity
-            android:name="com.facebook.FacebookActivity"
-            android:exported="true"
-            android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-            android:label="@string/app_name" />
-
-        <activity
-            android:name="com.facebook.CustomTabActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="@string/fb_login_protocol_scheme" />
-            </intent-filter>
-        </activity>
-
     </application>
 
 </manifest>

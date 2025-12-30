@@ -17,7 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
+//test commit
 public class D_Boy_MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;

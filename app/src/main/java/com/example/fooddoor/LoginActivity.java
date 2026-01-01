@@ -36,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
             if (validateInputs(emailInput, passwordInput)) {
                 Toast.makeText(LoginActivity.this, "Login Successfully Done", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                Intent intent = new Intent(LoginActivity.this, AdminHomeActivity.class);
                 startActivity(intent);
                 finish(); // Optional: finish LoginActivity so user can't go back
             }

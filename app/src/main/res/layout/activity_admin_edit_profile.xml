@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- ACTION BAR / TOOLBAR -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarEditProfile"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/green"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Edit Profile"
+        app:titleTextColor="@android:color/white"
+        app:navigationIcon="@drawable/icon_arrow_back"/>
+
+    <!-- CONTENT -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            android:orientation="vertical">
+
+            <!-- Name -->
+            <TextView style="@style/Label" android:text="Name"/>
+            <EditText
+                android:id="@+id/etName"
+                style="@style/Input"
+                android:text="Albert Florest"/>
+
+            <!-- Username -->
+            <TextView style="@style/Label" android:text="Username"/>
+            <EditText
+                android:id="@+id/etUsername"
+                style="@style/Input"
+                android:text="albertflorest_"/>
+
+            <!-- Gender -->
+            <TextView style="@style/Label" android:text="Gender"/>
+            <Spinner
+                android:id="@+id/spinnerGender"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"/>
+
+
+            <!-- Phone -->
+            <TextView style="@style/Label" android:text="Phone Number"/>
+            <EditText
+                android:id="@+id/etPhone"
+                style="@style/Input"
+                android:text="+44 1632 960860"
+                android:inputType="phone"/>
+
+            <!-- Email -->
+            <TextView style="@style/Label" android:text="Email"/>
+            <EditText
+                android:id="@+id/etEmail"
+                style="@style/Input"
+                android:text="albert@email.com"
+                android:inputType="textEmailAddress"/>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                android:text="Save"
+                android:textColor="@android:color/white"
+                android:backgroundTint="@color/green"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

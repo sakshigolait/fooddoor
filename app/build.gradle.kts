@@ -49,7 +49,8 @@ dependencies {
     implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
     implementation ("com.google.android.material:material:1.11.0")
-
+    implementation ("com.google.android.gms:play-services-maps:18.2.0")
+    implementation ("com.google.android.gms:play-services-location:21.0.1")
 
     implementation(libs.appcompat)
     implementation(libs.material)

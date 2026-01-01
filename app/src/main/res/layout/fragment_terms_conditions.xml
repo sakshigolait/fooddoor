@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:windowBackground">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        android:layout_above="@+id/spaceBottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Top bar with back and title -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="16dp">
+
+                <ImageView
+                    android:id="@+id/btnBackTerms"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@mipmap/ic_launcher"
+                    android:padding="4dp" />
+
+                <TextView
+                    android:id="@+id/tvTitleTerms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Terms &amp; Conditions"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="?android:textColorPrimary" />
+            </LinearLayout>
+
+            <!-- T&C content -->
+            <TextView
+                android:id="@+id/tvTermsContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="14sp"
+                android:lineSpacingExtra="4dp"
+                android:text="
+1. Acceptance of Terms
+By using the FoodDoor app, you agree to these Terms &amp; Conditions.
+If you do not agree, please do not use the app.
+
+2. User Account
+• You are responsible for maintaining the confidentiality of your login details.
+• Any activity done from your account will be treated as done by you.
+
+3. Orders &amp; Payments
+• All prices shown in the app are inclusive/exclusive of taxes as mentioned on the screen.
+• Once an order is placed, cancellation and refund will follow our cancellation policy.
+• Payment failures are handled by the respective payment gateway or bank.
+
+4. Delivery
+• Estimated delivery time is shown for each order but may vary due to traffic, weather or other factors.
+• FoodDoor is not responsible for delays caused by restaurants, riders or other third-party partners.
+
+5. Use of App
+• You agree not to misuse the app, attempt to hack, reverse engineer or disturb our services.
+• Abusive language or behaviour towards support staff or delivery partners will not be tolerated.
+
+6. Privacy
+• We collect basic information like name, phone number, email and address to provide services.
+• Your data is handled as per our Privacy Policy.
+
+7. Limitation of Liability
+FoodDoor will not be responsible for any indirect, incidental or consequential damages arising from use of the app.
+
+8. Changes to Terms
+We may update these Terms &amp; Conditions from time to time.
+Continued use of the app means you accept the updated terms.
+
+9. Contact Us
+For any questions, you can reach us from the Contact Us section in the app." />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Just to keep some space at bottom if needed -->
+    <View
+        android:id="@+id/spaceBottom"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:elevation="4dp"
+    android:padding="15dp"
+    android:radius="12dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtOrderID"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Order ID: ACR147856"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:id="@+id/txtPayment"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Payment Method: Online"/>
+
+        <TextView
+            android:id="@+id/txtTotalPayment"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Total Payment: $32.00"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:id="@+id/txtPickup"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Street: Pickup Address"/>
+
+        <TextView
+            android:id="@+id/txtDrop"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Street: Drop Address"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btnNext"
+                android:src="@drawable/food_history"
+                android:layout_width="30dp"
+                android:layout_height="30dp"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtTime"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="1 min ago"
+            android:textSize="12sp"
+            android:layout_gravity="end"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

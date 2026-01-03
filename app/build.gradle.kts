@@ -51,6 +51,7 @@ dependencies {
     implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
     implementation ("de.hdodenhof:circleimageview:3.1.0")
 
+    implementation ("androidx.fragment:fragment:1.8.4")
 
     implementation(platform("com.google.firebase:firebase-bom:33.4.0"))
     implementation("com.google.firebase:firebase-auth")

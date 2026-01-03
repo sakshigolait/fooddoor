@@ -1,4 +1,4 @@
-package com.example.fooddoor.Delivery_Boy;
+package com.example.fooddoor;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,8 +10,6 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.fooddoor.R;
 
 import java.util.ArrayList;
 

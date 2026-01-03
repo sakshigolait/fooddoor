@@ -1,23 +1,18 @@
-package com.example.fooddoor.Delivery_Boy;
+package com.example.fooddoor;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
-import android.os.Bundle;
-import android.view.MenuItem;
 
-import com.example.fooddoor.Delivery_Boy.D_Boy_HistoryFragment;
-import com.example.fooddoor.Delivery_Boy.D_Boy_ProfileFragment;
+import com.example.fooddoor.D_Boy_HistoryFragment;
+import com.example.fooddoor.D_Boy_HomeFragment;
+import com.example.fooddoor.D_Boy_ProfileFragment;
 import com.example.fooddoor.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
-//test commit
+
+
 public class D_Boy_MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
@@ -25,18 +20,24 @@ public class D_Boy_MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_main);
+
+        // ✅ SAME layout jisme BottomNavigationView + FrameLayout hai
+        setContentView(R.layout.activity_dboy_main);
+
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        // Load default fragment
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.frame_layout, new D_Boy_HomeFragment())
-                .commit();
+        // 🔴 Safety check (crash se bachata hai)
+        if (bottomNavigationView == null) {
+            throw new RuntimeException("BottomNavigationView is null. Check ID & layout.");
+        }
+
+        // ✅ Default fragment (Home)
+        loadFragment(new D_Boy_HomeFragment());
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
+
             Fragment selectedFragment = null;
+
             int id = item.getItemId();
 
             if (id == R.id.nav_home) {
@@ -48,17 +49,17 @@ public class D_Boy_MainActivity extends AppCompatActivity {
             }
 
             if (selectedFragment != null) {
-                getSupportFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.frame_layout, selectedFragment)
-                        .commit();
+                loadFragment(selectedFragment);
             }
+
             return true;
         });
     }
+
+    private void loadFragment(Fragment fragment) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.frame_layout, fragment)
+                .commit();
+    }
 }
-
-
-
-
-

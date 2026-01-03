@@ -1,10 +1,9 @@
-package com.example.fooddoor.Delivery_Boy;
+package com.example.fooddoor;
 
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
 
-import com.example.fooddoor.R;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;

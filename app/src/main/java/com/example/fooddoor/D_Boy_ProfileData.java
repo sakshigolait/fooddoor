@@ -1,6 +1,5 @@
-package com.example.fooddoor.Delivery_Boy;
+package com.example.fooddoor;
 
-import android.os.Bundle;
 import android.os.Bundle;
 import android.app.AlertDialog;
 import android.view.LayoutInflater;
@@ -12,12 +11,9 @@ import android.widget.Toast;
 import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.activity.EdgeToEdge;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-
-import com.example.fooddoor.R;
 
 public class D_Boy_ProfileData extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package com.example.fooddoor.Delivery_Boy;
+package com.example.fooddoor;
 
 public class DeliveryModel {
     String orderId, paymentMethod, totalPayment, pickupAddress, dropAddress, time;

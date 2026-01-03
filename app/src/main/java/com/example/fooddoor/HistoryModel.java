@@ -1,4 +1,4 @@
-package com.example.fooddoor.Delivery_Boy;
+package com.example.fooddoor;
 
 public class HistoryModel {
     String orderId, paymentMethod, amount, status;

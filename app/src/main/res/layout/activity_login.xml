@@ -103,21 +103,14 @@
             android:layout_marginTop="16dp">
 
             <ImageView
+                android:id="@+id/imgGoogle"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@drawable/googlelogo3" />
+                android:src="@drawable/googlelogo3"
+                android:clickable="true"
+                android:focusable="true"/>
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/facebooklogo2"
-                android:layout_marginStart="16dp" />
 
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:src="@drawable/apple4"
-                android:layout_marginStart="16dp" />
         </LinearLayout>
 
         <TextView

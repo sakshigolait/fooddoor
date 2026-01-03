@@ -19,24 +19,19 @@
             android:gravity="center_vertical">
 
             <ImageView
+                android:id="@+id/locationiconhomefrag"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:src="@drawable/location" />
+                android:src="@drawable/loc2" />
 
-            <EditText
-                android:layout_width="0dp"
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/searchView"
+                android:layout_width="300dp"
                 android:layout_height="40dp"
-                android:layout_weight="1"
-                android:hint="Search"
-                android:padding="8dp"
-                android:drawableStart="@drawable/shape2"
-                android:background="@android:drawable/editbox_background_normal"
-                android:layout_marginHorizontal="8dp" />
+                android:queryHint="Search food..."
+                android:background="@drawable/shape2"
+                />
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/bell" />
         </LinearLayout>
 
         <!-- Offer + slider -->
@@ -55,14 +50,14 @@
             android:layout_marginHorizontal="12dp" />
 
         <!-- Dots below slider -->
-<!--        <com.google.android.material.tabs.TabLayout-->
-<!--            android:id="@+id/tabDots"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_horizontal"-->
-<!--            android:layout_marginTop="6dp"-->
-<!--            app:tabIndicatorHeight="0dp"-->
-<!--            app:tabIndicator="@null" />-->
+        <!--        <com.google.android.material.tabs.TabLayout-->
+        <!--            android:id="@+id/tabDots"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center_horizontal"-->
+        <!--            android:layout_marginTop="6dp"-->
+        <!--            app:tabIndicatorHeight="0dp"-->
+        <!--            app:tabIndicator="@null" />-->
 
         <!-- Categories (horizontal) -->
         <TextView

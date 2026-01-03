@@ -16,11 +16,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.fooddoor.Adapter.FoodMenuAdapter;
 import com.example.fooddoor.fragment.CartFragment;
 import com.example.fooddoor.fragment.HomeFragment;
 import com.example.fooddoor.fragment.OrderFragment;
 import com.example.fooddoor.fragment.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
 
@@ -40,7 +43,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // Safe check to avoid crash if there's no ActionBar
+        // ActionBar color + title
         if (getSupportActionBar() != null) {
             getSupportActionBar().setBackgroundDrawable(
                     new ColorDrawable(getResources().getColor(R.color.white))
@@ -59,6 +62,20 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView = findViewById(R.id.homeBottomNevigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.hhome);
+
+        // тнР Register all food items when app starts
+        new Handler().postDelayed(() -> {
+            List<FoodItem> all = FoodMenuAdapter.fullList;
+            if (all != null) {
+                for (FoodItem item : all) {
+                    FavManager.registerItem(item);
+                }
+            }
+        }, 1500);
+
+
+
+
     }
 
     public void Welcome() {
@@ -68,7 +85,6 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         ad.setPositiveButton("Thank You", (dialog, which) -> dialog.cancel());
         ad.create().show();
 
-        // Fixed the typo in key name
         editor.putBoolean("isFirstTime", false).commit();
     }
 
@@ -81,24 +97,24 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        if (item.getItemId() == R.id.menusetting) {
-            Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, SettingActivity.class));
-
-        } else if (item.getItemId() == R.id.menucontactus) {
-            Toast.makeText(this, "Contact Us", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, ContactusActivity.class));
-
-        }
-        else if (item.getItemId() == R.id.notification) {
-            Toast.makeText(this, "Notification", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, NotificationActivity.class));
-
-        } else if (item.getItemId() == R.id.favourite) {
-            Toast.makeText(this, "Favourite", Toast.LENGTH_SHORT).show();
-            startActivity(new Intent(this, FavouriteActivity.class));
-
-        } else if (item.getItemId() == R.id.menulogout) {
+//        if (item.getItemId() == R.id.menusetting) {
+//            Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
+//            startActivity(new Intent(this, SettingActivity.class));
+//
+//        } else if (item.getItemId() == R.id.menucontactus) {
+//            Toast.makeText(this, "Contact Us", Toast.LENGTH_SHORT).show();
+//            startActivity(new Intent(this, ContactusActivity.class));
+//
+//        } else if (item.getItemId() == R.id.notification) {
+//            Toast.makeText(this, "Notification", Toast.LENGTH_SHORT).show();
+//            startActivity(new Intent(this, NotificationActivity.class));
+//
+//        } else if (item.getItemId() == R.id.favourite) {
+//            Toast.makeText(this, "Favourite", Toast.LENGTH_SHORT).show();
+//            startActivity(new Intent(this, FavouriteActivity.class));
+//
+//        } else
+        if (item.getItemId() == R.id.menulogout) {
             AlertDialog.Builder ad = new AlertDialog.Builder(this);
             ad.setTitle("Logout");
             ad.setMessage("Are you sure you want to logout?");
@@ -116,6 +132,13 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     @SuppressLint("MissingSuperCall")
     @Override
     public void onBackPressed() {
+        // ЁЯФЩ agar koi fragment backstack me hai (jaise ItemDetailFragment)
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+            getSupportFragmentManager().popBackStack();
+            return;
+        }
+
+        // ЁЯПа agar koi detail fragment nahi hai, normal double-tap-to-exit
         if (doubletap) {
             finishAffinity();
         } else {
@@ -129,11 +152,26 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.hhome) {
             getSupportFragmentManager().beginTransaction().replace(R.id.homeframelayout, homeFragment).commit();
+
         } else if (item.getItemId() == R.id.horder) {
             getSupportFragmentManager().beginTransaction().replace(R.id.homeframelayout, orderFragment).commit();
+
         } else if (item.getItemId() == R.id.hcart) {
             getSupportFragmentManager().beginTransaction().replace(R.id.homeframelayout, chatFragment).commit();
+
         } else if (item.getItemId() == R.id.hprofile) {
+            Intent intent = getIntent();
+            String name = intent.getStringExtra("name");
+            String number = intent.getStringExtra("number");
+            String email = intent.getStringExtra("email");
+
+            Bundle bundle = new Bundle();
+            bundle.putString("name", name);
+            bundle.putString("number", number);
+            bundle.putString("email", email);
+
+            profileFragment.setArguments(bundle);
+
             getSupportFragmentManager().beginTransaction().replace(R.id.homeframelayout, profileFragment).commit();
         }
         return true;

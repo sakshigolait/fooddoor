@@ -15,13 +15,30 @@
         android:orientation="vertical"
         android:padding="10dp">
 
-        <ImageView
-            android:id="@+id/imgFood"
+        <!-- ⭐ Added FrameLayout to overlap heart on image -->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="120dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/offer4"
-            android:contentDescription="@string/app_name" />
+            android:layout_height="120dp">
+
+            <ImageView
+                android:id="@+id/imgFood"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/offer4"
+                android:contentDescription="@string/app_name" />
+
+            <!-- ⭐ Favourite icon on top-right corner -->
+            <ImageView
+                android:id="@+id/imgFav"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:layout_gravity="top|end"
+                android:src="@drawable/heart"
+                android:padding="4dp"
+                android:clickable="true"
+                android:focusable="true"/>
+        </FrameLayout>
 
         <TextView
             android:id="@+id/txtName"

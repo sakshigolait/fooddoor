@@ -6,4 +6,5 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="default_web_client_id">YOUR_CLIENT_ID_HERE</string>
+    <string name="title_activity_location">LocationActivity</string>
 </resources>

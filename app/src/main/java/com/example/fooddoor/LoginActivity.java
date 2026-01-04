@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
             if (validateInputs(emailInput, passwordInput)) {
                 Toast.makeText(LoginActivity.this,
                         "Login Successfully Done", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, D_Boy_MainActivity.class);
+                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                 startActivity(intent);
                 finish();
             }

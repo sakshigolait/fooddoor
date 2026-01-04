@@ -21,7 +21,7 @@ import com.example.fooddoor.R;
 
 import java.util.List;
 
-public class CartFragment extends Fragment {
+public class cartFragment extends Fragment {
 
     private RecyclerView cartRecycler;
     private CartAdapter adapter;

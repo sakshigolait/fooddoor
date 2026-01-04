@@ -17,7 +17,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fooddoor.Adapter.FoodMenuAdapter;
-import com.example.fooddoor.fragment.CartFragment;
+import com.example.fooddoor.fragment.cartFragment;
 import com.example.fooddoor.fragment.HomeFragment;
 import com.example.fooddoor.fragment.OrderFragment;
 import com.example.fooddoor.fragment.ProfileFragment;
@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
     HomeFragment homeFragment = new HomeFragment();
     OrderFragment orderFragment = new OrderFragment();
-    CartFragment chatFragment = new CartFragment();
+    cartFragment chatFragment = new cartFragment();
     ProfileFragment profileFragment = new ProfileFragment();
 
     @Override

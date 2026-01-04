@@ -57,6 +57,7 @@ public class D_Boy_ProfileFragment extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
     private void showLogoutDialog() {
 
         Dialog dialog = new Dialog(requireContext());
@@ -76,6 +77,7 @@ public class D_Boy_ProfileFragment extends Fragment {
 
         });
 
+
         dialog.show();
     }
 
@@ -90,8 +92,8 @@ public class D_Boy_ProfileFragment extends Fragment {
         view.findViewById(R.id.DboybtnNotifications).setOnClickListener(v ->
                 Toast.makeText(getActivity(), "Notifications Clicked", Toast.LENGTH_SHORT).show());
 
-        view.findViewById(R.id.DboybtnShare).setOnClickListener(v ->
-                Toast.makeText(getActivity(), "Share & Earn Clicked", Toast.LENGTH_SHORT).show());
+        view.findViewById(R.id.DboybtnQR).setOnClickListener(v ->
+                Toast.makeText(getActivity(), "QR Code Clicked", Toast.LENGTH_SHORT).show());
 
         view.findViewById(R.id.DboybtnSettings).setOnClickListener(v ->
                 Toast.makeText(getActivity(), "Settings Clicked", Toast.LENGTH_SHORT).show());

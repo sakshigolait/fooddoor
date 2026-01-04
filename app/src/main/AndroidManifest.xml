@@ -20,6 +20,10 @@
             android:theme="@style/Theme.FoodDoor"
             android:exported="false" />
         <activity
+            android:name=".Delivery_Boy.D_Boy_MainActivity"
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
+        <activity
             android:name=".FavouriteActivity"
             android:theme="@style/Theme.FoodDoor"
             android:exported="false" />

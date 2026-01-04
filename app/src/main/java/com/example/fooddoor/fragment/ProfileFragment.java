@@ -21,11 +21,11 @@ import androidx.fragment.app.Fragment;
 import com.example.fooddoor.LoginActivity;
 import com.example.fooddoor.R;
 
-import de.hdodenhof.circleimageview.CircleImageView;
+//import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ProfileFragment extends Fragment {
 
-    CircleImageView imgProfile;
+    //CircleImageView imgProfile;
     TextView tvChangePhoto, tvName, tvMyName, tvPhone, tvEmail, tvAddress;
 
     DrawerLayout drawerLayout;
@@ -41,7 +41,7 @@ public class ProfileFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
-        imgProfile = view.findViewById(R.id.imgProfile);
+       // imgProfile = view.findViewById(R.id.imgProfile);
         tvChangePhoto = view.findViewById(R.id.tvChangePhoto);
         tvName = view.findViewById(R.id.tvName);
         tvMyName = view.findViewById(R.id.tvMyName);
@@ -197,7 +197,7 @@ public class ProfileFragment extends Fragment {
                             .takePersistableUriPermission(imageUri, takeFlags);
                 } catch (Exception ignored) {}
 
-                imgProfile.setImageURI(imageUri);
+                //imgProfile.setImageURI(imageUri);
 
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("profile_image", imageUri.toString());
@@ -221,12 +221,12 @@ public class ProfileFragment extends Fragment {
 
         if (image != null && !image.isEmpty()) {
             try {
-                imgProfile.setImageURI(Uri.parse(image));
+               // imgProfile.setImageURI(Uri.parse(image));
             } catch (SecurityException se) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.remove("profile_image");
                 editor.apply();
-                imgProfile.setImageResource(R.drawable.chockletvenellaicecream);
+               // imgProfile.setImageResource(R.drawable.chockletvenellaicecream);
             } catch (Exception e) {
                 e.printStackTrace();
             }

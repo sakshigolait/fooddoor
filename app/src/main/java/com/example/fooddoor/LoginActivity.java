@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.fooddoor.Delivery_Boy.D_Boy_MainActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -70,7 +71,7 @@ public class LoginActivity extends AppCompatActivity {
             if (validateInputs(emailInput, passwordInput)) {
                 Toast.makeText(LoginActivity.this,
                         "Login Successfully Done", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                Intent intent = new Intent(LoginActivity.this, D_Boy_MainActivity.class);
                 startActivity(intent);
                 finish();
             }

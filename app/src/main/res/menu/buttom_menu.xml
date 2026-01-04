@@ -12,7 +12,7 @@
     <item
         android:id="@+id/horder"
         android:title="Order"
-        android:icon="@drawable/orderex3"
+        android:icon="@drawable/food"
         app:showAsAction="never"
         />
 

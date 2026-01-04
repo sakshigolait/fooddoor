@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/adminPastDetail_root"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TOP ORANGE BAR -->
+    <LinearLayout
+        android:id="@+id/adminPastDetail_appBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/green"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/adminPastDetail_buttonBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            app:tint="@android:color/white"
+            android:src="@drawable/icon_arrow_back" />
+
+        <TextView
+            android:id="@+id/adminPastDetail_appBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="Completed Order"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/adminPastDetail_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/adminPastDetail_mainContainer"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- HEADER (blue area same as others) -->
+            <LinearLayout
+                android:id="@+id/adminPastDetail_headerContainer"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:background="#E3F2FD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/adminPastDetail_imageAvatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/sym_def_app_icon"
+                    android:layout_marginEnd="8dp" />
+
+                <LinearLayout
+                    android:id="@+id/adminPastDetail_nameTimeContainer"
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/adminPastDetail_textCustomerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Customer Name"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/adminPastDetail_textTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Today at 12:33 AM"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/adminPastDetail_textOrderId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Order id: 348"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Message label -->
+            <TextView
+                android:id="@+id/adminPastDetail_labelMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Message"
+                android:textStyle="bold"
+                android:layout_marginTop="8dp" />
+
+            <TextView
+                android:id="@+id/adminPastDetail_textMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Customer message..." />
+
+            <!-- Items label -->
+            <TextView
+                android:id="@+id/adminPastDetail_labelItems"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Items"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp" />
+
+            <!-- Table header -->
+            <LinearLayout
+                android:id="@+id/adminPastDetail_itemsHeaderRow"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp">
+
+                <TextView
+                    android:id="@+id/adminPastDetail_headerItem"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Item"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/adminPastDetail_headerQty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:text="Quantity"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/adminPastDetail_headerPrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Price"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Items list -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/adminPastDetail_itemsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+            <!-- Totals -->
+            <LinearLayout
+                android:id="@+id/adminPastDetail_totalsContainer"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/adminPastDetail_textSubtotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Subtotal: $0.00" />
+
+                <TextView
+                    android:id="@+id/adminPastDetail_textDeliveryFee"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Delivery Fee: $0.00" />
+
+                <TextView
+                    android:id="@+id/adminPastDetail_textServiceTax"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Service tax (0%): $0.00" />
+
+                <TextView
+                    android:id="@+id/adminPastDetail_textDiscount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Discount (0%): $0.00" />
+
+                <TextView
+                    android:id="@+id/adminPastDetail_textTotal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total: $0.00"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM STATUS TEXT -->
+    <TextView
+        android:id="@+id/adminPastDetail_textStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Order Status: Order Delivered"
+        android:gravity="center"
+        android:padding="10dp"
+        android:textStyle="bold"
+        android:textSize="14sp"
+        android:textColor="@color/admin_status_delivered" />
+
+</LinearLayout>

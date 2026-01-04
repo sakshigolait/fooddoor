@@ -43,7 +43,7 @@ public class FoodMenuAdapter extends RecyclerView.Adapter<FoodMenuAdapter.VH> {
     public void onBindViewHolder(@NonNull VH h, int pos) {
         FoodItem f = items.get(pos);
 
-        // ⭐ Yaha har item register ho raha hai (chahe cake ho, drink ho, etc.)
+        // тнР Yaha har item register ho raha hai (chahe cake ho, drink ho, etc.)
         FavManager.registerItem(f);
 
         h.name.setText(f.getName());

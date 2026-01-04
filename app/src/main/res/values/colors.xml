@@ -4,5 +4,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#144226</color>
     <color name="grey">#EAEAEB</color>
-
+    <color name="admin_orange">#FF8800</color>
+    <color name="admin_status_delivered">#2E7D32</color>
+    <color name="admin_status_cancelled">#E53935</color>
 </resources>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_admin_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="2dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/admin_item_image"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/blueberrycake"
+            android:contentDescription="Menu Item Image"
+            android:layout_marginEnd="12dp"/>
+
+        <TextView
+            android:id="@+id/admin_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/admin_item_image"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:text="Spicy Chicken Wrap"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/admin_item_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/admin_item_name"
+            android:layout_toEndOf="@id/admin_item_image"
+            android:layout_marginTop="2dp"
+            android:textSize="14sp"
+            android:text="Category: Mains" />
+
+        <TextView
+            android:id="@+id/admin_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/admin_item_category"
+            android:layout_toEndOf="@id/admin_item_image"
+            android:layout_marginTop="2dp"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:text="$12.50"
+            android:textColor="@android:color/holo_green_dark"/>
+
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

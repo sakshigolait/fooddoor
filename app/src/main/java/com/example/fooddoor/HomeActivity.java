@@ -17,7 +17,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.fooddoor.Adapter.FoodMenuAdapter;
-import com.example.fooddoor.fragment.CartFragment;
+import com.example.fooddoor.fragment.cartFragment;
 import com.example.fooddoor.fragment.HomeFragment;
 import com.example.fooddoor.fragment.OrderFragment;
 import com.example.fooddoor.fragment.ProfileFragment;
@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 
     HomeFragment homeFragment = new HomeFragment();
     OrderFragment orderFragment = new OrderFragment();
-    CartFragment chatFragment = new CartFragment();
+    cartFragment chatFragment = new cartFragment();
     ProfileFragment profileFragment = new ProfileFragment();
 
     @Override
@@ -63,7 +63,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
         bottomNavigationView.setOnNavigationItemSelectedListener(this);
         bottomNavigationView.setSelectedItemId(R.id.hhome);
 
-        // ⭐ Register all food items when app starts
+        // тнР Register all food items when app starts
         new Handler().postDelayed(() -> {
             List<FoodItem> all = FoodMenuAdapter.fullList;
             if (all != null) {
@@ -114,7 +114,7 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
 //            startActivity(new Intent(this, FavouriteActivity.class));
 //
 //        } else
-           if (item.getItemId() == R.id.menulogout) {
+        if (item.getItemId() == R.id.menulogout) {
             AlertDialog.Builder ad = new AlertDialog.Builder(this);
             ad.setTitle("Logout");
             ad.setMessage("Are you sure you want to logout?");
@@ -132,13 +132,13 @@ public class HomeActivity extends AppCompatActivity implements BottomNavigationV
     @SuppressLint("MissingSuperCall")
     @Override
     public void onBackPressed() {
-        // 🔙 agar koi fragment backstack me hai (jaise ItemDetailFragment)
+        // ЁЯФЩ agar koi fragment backstack me hai (jaise ItemDetailFragment)
         if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
             getSupportFragmentManager().popBackStack();
             return;
         }
 
-        // 🏠 agar koi detail fragment nahi hai, normal double-tap-to-exit
+        // ЁЯПа agar koi detail fragment nahi hai, normal double-tap-to-exit
         if (doubletap) {
             finishAffinity();
         } else {

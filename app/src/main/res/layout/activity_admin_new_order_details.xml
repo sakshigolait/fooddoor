@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/adminNewDetail_root"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- TOP ORANGE BAR -->
+    <LinearLayout
+        android:id="@+id/adminNewDetail_appBar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/green"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/adminNewDetail_buttonBack"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            app:tint="@color/white"
+            android:src="@drawable/icon_arrow_back" />
+
+        <TextView
+            android:id="@+id/adminNewDetail_appBarTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="New Order"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/adminNewDetail_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/adminNewDetail_mainContainer"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- HEADER (BLUE AREA) -->
+            <LinearLayout
+                android:id="@+id/adminNewDetail_headerContainer"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:background="#E3F2FD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/adminNewDetail_imageAvatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@android:drawable/sym_def_app_icon"
+                    android:layout_marginEnd="8dp" />
+
+                <LinearLayout
+                    android:id="@+id/adminNewDetail_nameTimeContainer"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/adminNewDetail_textCustomerName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Customer Name"
+                        android:textStyle="bold"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/adminNewDetail_textTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Today at 12:33 AM"
+                        android:textSize="12sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/adminNewDetail_textOrderId"
+                    android:text="Order id: 348"
+                    android:textSize="13sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- PHONE ROW -->
+            <LinearLayout
+                android:id="@+id/adminNewDetail_phoneRow"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/adminNewDetail_textPhone"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="+1 234 5678 910"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:id="@+id/adminNewDetail_buttonCall"
+                    android:text="Call"
+                    android:background="@drawable/btn_border_green"
+                    android:textColor="@color/green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+
+            <!-- EMAIL ROW -->
+            <LinearLayout
+                android:id="@+id/adminNewDetail_emailRow"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="4dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/adminNewDetail_textEmail"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="customer@example.com"
+                    android:textColor="@color/black"/>
+
+                <Button
+                    android:id="@+id/adminNewDetail_buttonEmail"
+                    android:text="Email"
+                    android:background="@drawable/btn_border_green"
+                    android:textColor="@color/green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- ADDRESS ROW -->
+            <LinearLayout
+                android:id="@+id/adminNewDetail_addressRow"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingTop="4dp"
+                android:paddingBottom="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/adminNewDetail_textAddress"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Full address here"
+                    android:textColor="@color/black"/>
+
+            </LinearLayout>
+
+            <!-- MESSAGE -->
+            <TextView
+                android:id="@+id/adminNewDetail_labelMessage"
+                android:text="Message"
+                android:textStyle="bold"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/adminNewDetail_textMessage"
+                android:layout_marginTop="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Customer message..." />
+
+            <!-- ITEMS HEADER -->
+            <TextView
+                android:id="@+id/adminNewDetail_labelItems"
+                android:text="Items"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <!-- table header -->
+            <LinearLayout
+                android:id="@+id/adminNewDetail_itemsHeaderRow"
+                android:orientation="horizontal"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/adminNewDetail_headerItem"
+                    android:text="Item"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/adminNewDetail_headerQty"
+                    android:text="Quantity"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:id="@+id/adminNewDetail_headerPrice"
+                    android:text="Price"
+                    android:textStyle="bold"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- ITEMS LIST -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/adminNewDetail_itemsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false" />
+
+
+            <LinearLayout
+                android:id="@+id/adminNewDetail_invoiceRow"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+                <LinearLayout
+                    android:id="@+id/adminNewDetail_totalsContainer"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="end">
+
+                    <TextView
+                        android:id="@+id/adminNewDetail_textSubtotal"
+                        android:text="Subtotal: $0.00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/adminNewDetail_textDeliveryFee"
+                        android:text="Delivery Fee: $0.00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/adminNewDetail_textServiceTax"
+                        android:text="Service tax (0%): $0.00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/adminNewDetail_textDiscount"
+                        android:text="Discount (0%): $0.00"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/adminNewDetail_textTotal"
+                        android:text="Total: $0.00"
+                        android:textStyle="bold"
+                        android:textSize="16sp"
+                        android:layout_marginTop="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- BOTTOM BUTTONS BAR -->
+    <LinearLayout
+        android:id="@+id/adminNewDetail_bottomButtonsRow"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:padding="8dp"
+        android:background="#FFFFFF">
+
+        <Button
+        android:id="@+id/adminNewDetail_buttonCancelOrder"
+        android:text="Cancel Order"
+        android:layout_marginEnd="12dp"
+        android:textColor="@android:color/white"
+        android:paddingVertical="12dp"
+        android:paddingHorizontal="8dp"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:backgroundTint="#CC1914"
+        android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/adminNewDetail_buttonAcceptOrder"
+            android:text="Accept Order"
+            android:textColor="@android:color/white"
+            android:paddingVertical="12dp"
+            android:paddingHorizontal="8dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:backgroundTint="@color/admin_status_delivered"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+</LinearLayout>

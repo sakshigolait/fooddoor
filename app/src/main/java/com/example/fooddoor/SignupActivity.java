@@ -3,7 +3,6 @@ package com.example.fooddoor;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -16,7 +15,13 @@ public class SignupActivity extends AppCompatActivity {
     EditText srname, srnumber, sremailid, srpassword;
     Button btnsubmit;
 
+    // ADDED buttons (merge only)
+    Button btnUser, btnAdmin, btnDelivery;
+
     TextView srlogin;
+
+    // ADDED role variable
+    String selectedRole = "USER"; // default
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,10 +35,23 @@ public class SignupActivity extends AppCompatActivity {
         btnsubmit = findViewById(R.id.btnsubmit);
         srlogin = findViewById(R.id.srlogin);
 
+        // ADDED findViewById (merge)
+        btnUser = findViewById(R.id.btnUser);
+        btnAdmin = findViewById(R.id.btnAdmin);
+        btnDelivery = findViewById(R.id.btnDelivery);
+
         srlogin.setOnClickListener(v -> {
             Intent intent = new Intent(SignupActivity.this, LoginActivity.class);
             startActivity(intent);
         });
+
+        // ===== ROLE BUTTON LOGIC (MERGED) =====
+        btnUser.setOnClickListener(v -> selectedRole = "USER");
+
+        btnAdmin.setOnClickListener(v -> selectedRole = "ADMIN");
+
+        btnDelivery.setOnClickListener(v -> selectedRole = "DELIVERY");
+        // =====================================
 
         btnsubmit.setOnClickListener(v -> {
             if (srname.getText().toString().isEmpty()) {
@@ -51,21 +69,37 @@ public class SignupActivity extends AppCompatActivity {
             } else if (srpassword.getText().toString().length() < 8) {
                 srpassword.setError("Password must be at least 8 characters");
             } else {
-                Toast.makeText(SignupActivity.this, "Registration Successful", Toast.LENGTH_SHORT).show();
 
-                // ⭐ SAVE Registration Data to SharedPreferences
+                Toast.makeText(SignupActivity.this,
+                        "Registration Successful as " + selectedRole,
+                        Toast.LENGTH_SHORT).show();
+
+                // SAVE Registration Data
                 SharedPreferences prefs = getSharedPreferences("UserProfile", MODE_PRIVATE);
                 SharedPreferences.Editor editor = prefs.edit();
                 editor.putString("name", srname.getText().toString());
                 editor.putString("phone", srnumber.getText().toString());
                 editor.putString("email", sremailid.getText().toString());
-                editor.apply();  // Important: Save data
+                editor.putString("role", selectedRole); // ADDED
+                editor.apply();
 
-                // Open Home Screen
-                Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
+                // ===== ROLE BASED NAVIGATION (MERGED) =====
+                Intent intent;
+
+                if (selectedRole.equals("ADMIN")) {
+                    intent = new Intent(SignupActivity.this, AdminHomeActivity.class);
+                } else if (selectedRole.equals("DELIVERY")) {
+                    intent = new Intent(SignupActivity.this, D_Boy_MainActivity.class);
+                } else {
+                    intent = new Intent(SignupActivity.this, HomeActivity.class);
+                }
+                // =========================================
+
                 intent.putExtra("name", srname.getText().toString());
                 intent.putExtra("number", srnumber.getText().toString());
                 intent.putExtra("email", sremailid.getText().toString());
+                intent.putExtra("role", selectedRole);
+
                 startActivity(intent);
                 finish();
             }

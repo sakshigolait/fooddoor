@@ -24,7 +24,7 @@
         android:orientation="vertical"
         android:layout_weight="1">
 
-        <!-- ⭐ New Item Name Above Status -->
+        <!-- тнР New Item Name Above Status -->
         <TextView
             android:id="@+id/txtItemName"
             android:layout_width="wrap_content"

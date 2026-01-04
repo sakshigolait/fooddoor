@@ -12,7 +12,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp" />
 
-    <!-- ⭐ Item Name Added Here (NEW) -->
+    <!-- тнР Item Name Added Here (NEW) -->
     <TextView
         android:id="@+id/txtNameDetail"
         android:layout_width="wrap_content"

@@ -50,14 +50,14 @@
             android:layout_marginHorizontal="12dp" />
 
         <!-- Dots below slider -->
-<!--        <com.google.android.material.tabs.TabLayout-->
-<!--            android:id="@+id/tabDots"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_horizontal"-->
-<!--            android:layout_marginTop="6dp"-->
-<!--            app:tabIndicatorHeight="0dp"-->
-<!--            app:tabIndicator="@null" />-->
+        <!--        <com.google.android.material.tabs.TabLayout-->
+        <!--            android:id="@+id/tabDots"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="center_horizontal"-->
+        <!--            android:layout_marginTop="6dp"-->
+        <!--            app:tabIndicatorHeight="0dp"-->
+        <!--            app:tabIndicator="@null" />-->
 
         <!-- Categories (horizontal) -->
         <TextView

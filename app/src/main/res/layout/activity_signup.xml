@@ -12,7 +12,6 @@
         android:padding="24dp">
 
         <!-- Back to login -->
-
         <TextView
             android:id="@+id/srlogin"
             android:layout_width="wrap_content"
@@ -33,7 +32,50 @@
             android:textColor="@color/green"
             android:layout_marginTop="24dp" />
 
-        <!-- Email Field -->
+        <!-- ===== ADDED 3 BUTTONS (MERGED) ===== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:weightSum="3">
+
+            <Button
+                android:id="@+id/btnUser"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:text="User"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="@color/green" />
+
+            <Button
+                android:id="@+id/btnAdmin"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:layout_marginHorizontal="8dp"
+                android:text="Admin"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="@color/green" />
+
+            <Button
+                android:id="@+id/btnDelivery"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:text="Delivery"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="@color/green"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:paddingLeft="5dp"
+                android:gravity="center" />
+
+        </LinearLayout>
+        <!-- ===== END MERGE ===== -->
+
+        <!-- Name -->
         <EditText
             android:id="@+id/srname"
             android:layout_width="match_parent"
@@ -44,7 +86,7 @@
             android:background="@drawable/shape"
             android:layout_marginTop="24dp" />
 
-        <!-- Password Field -->
+        <!-- Mobile -->
         <EditText
             android:id="@+id/srnumber"
             android:layout_width="match_parent"
@@ -56,7 +98,7 @@
             android:background="@drawable/shape"
             android:layout_marginTop="16dp" />
 
-        <!-- Confirm Password -->
+        <!-- Email -->
         <EditText
             android:id="@+id/sremailid"
             android:layout_width="match_parent"
@@ -68,7 +110,7 @@
             android:background="@drawable/shape"
             android:layout_marginTop="16dp" />
 
-        <!-- Phone Number -->
+        <!-- Password -->
         <EditText
             android:id="@+id/srpassword"
             android:layout_width="match_parent"

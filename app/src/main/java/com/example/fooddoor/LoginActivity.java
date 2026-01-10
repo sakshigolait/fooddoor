@@ -29,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText lusername, lpassword;
     Button loginBtn;
-    TextView forgetbtn, signupbutton;
+    TextView tvForgotPassword, signupbutton;
     ImageView imgGoogle, imgFacebook;
 
     FirebaseAuth mAuth;
@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         lusername = findViewById(R.id.lusername);
         lpassword = findViewById(R.id.lpassword);
         loginBtn = findViewById(R.id.loginbtn);
-        forgetbtn = findViewById(R.id.forgetbtn);
+        TextView tvForgotPassword = findViewById(R.id.tvForgotPassword);
         signupbutton = findViewById(R.id.signupbutton);
         imgGoogle = findViewById(R.id.imgGoogle);
 
@@ -81,8 +81,11 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(LoginActivity.this, SignupActivity.class)));
 
         // Forgot Password Click
-        forgetbtn.setOnClickListener(v ->
-                Toast.makeText(this, "Forgot password tapped", Toast.LENGTH_SHORT).show());
+        tvForgotPassword.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this,ForgotpasswordActivity.class);
+            startActivity(intent);
+        });
+
     }
 
     // -------- GOOGLE FLOW --------

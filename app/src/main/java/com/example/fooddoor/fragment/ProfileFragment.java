@@ -20,6 +20,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.fooddoor.LoginActivity;
 import com.example.fooddoor.R;
+import com.example.fooddoor.edit_profile_fragment;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 

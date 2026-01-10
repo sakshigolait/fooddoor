@@ -93,7 +93,7 @@
             android:layout_height="50dp"
             android:hint="Mobile No."
             android:drawableStart="@drawable/shape"
-            android:inputType="text"
+            android:inputType="number"
             android:padding="12dp"
             android:background="@drawable/shape"
             android:layout_marginTop="16dp" />

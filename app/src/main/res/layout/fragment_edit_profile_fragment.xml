@@ -24,6 +24,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <!-- 🔽 Address Type Spinner (ADDED – no existing code changed) -->
+    <Spinner
+        android:id="@+id/spinnerAddressType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"/>
+
+    <!-- Existing Address EditText (UNCHANGED) -->
     <EditText
         android:id="@+id/etAddress"
         android:hint="Enter Address"

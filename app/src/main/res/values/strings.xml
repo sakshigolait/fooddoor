@@ -7,4 +7,10 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="default_web_client_id">YOUR_CLIENT_ID_HERE</string>
     <string name="title_activity_location">LocationActivity</string>
+
+    <string-array name="address_options">
+        <item>Current Location</item>
+        <item>Enter Manually</item>
+    </string-array>
+
 </resources>

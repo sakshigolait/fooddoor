@@ -1,5 +1,6 @@
 package com.example.fooddoor.fragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fooddoor.Adapter.CartAdapter;
 import com.example.fooddoor.CartModel;
-import com.example.fooddoor.SharedCartData; // ✅ yaha CartData ki jagah singleton
+import com.example.fooddoor.Order_successFragment;
+import com.example.fooddoor.PaymentFragment;
+import com.example.fooddoor.SharedCartData;
 import com.example.fooddoor.R;
 
 import java.util.List;
@@ -31,7 +34,10 @@ public class cartFragment extends Fragment {
 
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container,
+                             Bundle savedInstanceState) {
+
         View v = inflater.inflate(R.layout.fragment_cart, container, false);
 
         cartRecycler = v.findViewById(R.id.cartRecycler);
@@ -40,7 +46,6 @@ public class cartFragment extends Fragment {
 
         cartRecycler.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        // ✅ Get list from SharedCartData singleton
         list = SharedCartData.getInstance().getCartItems();
 
         adapter = new CartAdapter(getContext(), list, () -> updateTotal());
@@ -49,8 +54,83 @@ public class cartFragment extends Fragment {
         updateTotal();
 
         btnPlaceOrder.setOnClickListener(view -> {
+
+            // 🔹 NEW MERGE: AMOUNT CHECK
             int total = calculateTotal();
-            Toast.makeText(getContext(), "Place order: ₹" + total, Toast.LENGTH_SHORT).show();
+            if (total <= 0) {
+                Toast.makeText(
+                        getContext(),
+                        "Your cart is empty",
+                        Toast.LENGTH_SHORT
+                ).show();
+                return;
+            }
+
+            SharedPreferences sp =
+                    requireActivity().getSharedPreferences(
+                            "UserProfile",
+                            getContext().MODE_PRIVATE
+                    );
+
+            String address = sp.getString("address", "");
+
+            if (address == null || address.trim().isEmpty()) {
+                Toast.makeText(
+                        getContext(),
+                        "Please add delivery address",
+                        Toast.LENGTH_SHORT
+                ).show();
+                return;
+            }
+
+            android.app.AlertDialog.Builder builder =
+                    new android.app.AlertDialog.Builder(getContext());
+
+            View dialogView = LayoutInflater.from(getContext())
+                    .inflate(R.layout.dialog_order_summary, null);
+
+            builder.setView(dialogView);
+
+            android.app.AlertDialog dialog = builder.create();
+
+            TextView tvDialogAddress =
+                    dialogView.findViewById(R.id.tvDialogAddress);
+            TextView tvDialogTotal =
+                    dialogView.findViewById(R.id.tvDialogTotal);
+            Button btnCancel =
+                    dialogView.findViewById(R.id.btnCancel);
+            Button btnConfirm =
+                    dialogView.findViewById(R.id.btnConfirm);
+
+            tvDialogAddress.setText("Delivery Address:\n" + address);
+            tvDialogTotal.setText("Total Amount: ₹" + total);
+
+            // ✅ Cancel → ONLY close dialog
+            btnCancel.setOnClickListener(v1 -> {
+                dialog.dismiss();
+            });
+
+            // ✅ Confirm → Success screen
+            btnConfirm.setOnClickListener(v1 -> {
+
+                Toast.makeText(
+                        getContext(),
+                        "Order Confirmed",
+                        Toast.LENGTH_SHORT
+                ).show();
+
+                // ✅ ONLY go to Payment screen
+                requireActivity()
+                        .getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.homeframelayout, new PaymentFragment())
+                        .addToBackStack(null)
+                        .commit();
+
+                dialog.dismiss();
+            });
+
+            dialog.show();
         });
 
         return v;

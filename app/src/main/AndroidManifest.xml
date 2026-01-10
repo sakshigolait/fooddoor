@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.fooddoor">
+    xmlns:tools="http://schemas.android.com/tools">
 
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -10,6 +10,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+=======
+>>>>>>> 71ab77e41539b96e5b523b1a7299ba0302766c21
 
     <application
         android:allowBackup="true"
@@ -21,6 +23,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FoodDoor"
         tools:targetApi="31">
+<<<<<<< HEAD
         <activity
             android:name=".ResetPasswordActivity"
             android:exported="false" />
@@ -32,124 +35,47 @@
             android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
+=======
 
-             To get one, follow the directions here:
+>>>>>>> 71ab77e41539b96e5b523b1a7299ba0302766c21
 
-                https://developers.google.com/maps/documentation/android-sdk/get-api-key
-
-             Once you have your API key (it starts with "AIza"), define a new property in your
-             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
-             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
-        -->
-        <meta-data
-            android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDvjhJLqaSQ8wOrW1yyQba6zqgKoyhzt3o" />
-
-        <activity
-            android:name=".LocationActivity"
-            android:exported="false"
-            android:label="@string/title_activity_location" />
-        <activity
-            android:name=".D_Boy_MainActivity"
-            android:exported="false" />
-        <activity
-            android:name=".D_Boy_AvailableDeliveries"
-            android:exported="false" />
-        <activity
-            android:name=".D_Boy_MyLocationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".D_Boy_NotificationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".D_Boy_ProfileData"
-            android:exported="false" />
-        <activity
-            android:name=".D_Boy_settingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminAboutUsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminEditCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ManageCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminAddCategoryActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminChangePasswordActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminNotificationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminEditProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminSettingActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminPastOrderDetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminOngoingOrderDetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminNewOrderDetailsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AdminItemDetailActivity"
-            android:exported="false"
-            tools:ignore="MissingClass" />
-        <activity
-            android:name=".ManageItemsActivity"
-            android:exported="false"
-            tools:ignore="MissingClass" />
-        <activity
-            android:name=".ManageWorkerActivity"
-            android:exported="false"
-            tools:ignore="MissingClass" />
-        <activity
-            android:name=".AdminHomeActivity"
-            android:exported="false" />
         <activity
             android:name=".NotificationActivity"
-            android:exported="false"
-            android:theme="@style/Theme.FoodDoor" />
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
+        <activity
+            android:name=".Delivery_Boy.D_Boy_MainActivity"
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
         <activity
             android:name=".FavouriteActivity"
-            android:exported="false"
-            android:theme="@style/Theme.FoodDoor" />
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
         <activity
             android:name=".SettingActivity"
-            android:exported="false"
-            android:theme="@style/Theme.FoodDoor" />
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
         <activity
             android:name=".ContactusActivity"
-            android:exported="false"
-            android:theme="@style/Theme.FoodDoor" />
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
             android:exported="false"
-            android:theme="@style/Theme.FoodDoor" />
+            android:theme="@style/Theme.FoodDoor"
+            />
         <activity
             android:name=".SignupActivity"
-            android:exported="false"
-            android:theme="@style/Theme.FoodDoor" />
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false"
-            android:theme="@style/Theme.FoodDoor" />
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"
-            android:theme="@style/Theme.FoodDoor">
+            android:theme="@style/Theme.FoodDoor"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,18 +1,45 @@
 package com.example.fooddoor;
 
+import android.annotation.SuppressLint;
+import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.example.fooddoor.LoginActivity;
+import com.example.fooddoor.Modelclass.QR_code_Activity;
+import com.example.fooddoor.R;
+
 public class D_Boy_ProfileFragment extends Fragment {
 
+    private static final String ARG_PARAM1 = "param1";
+    private static final String ARG_PARAM2 = "param2";
+
+    private String mParam1;
+    private String mParam2;
+
+    public D_Boy_ProfileFragment() {
+        // Required empty public constructor
+    }
+
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);
+        }
+    }
+    @SuppressLint("MissingInflatedId")
     @Nullable
     @Override
     public View onCreateView(
@@ -20,69 +47,78 @@ public class D_Boy_ProfileFragment extends Fragment {
             @Nullable ViewGroup container,
             @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(
-                R.layout.fragment_d__boy__profile,
-                container,
-                false
-        );
+        View view = inflater.inflate(R.layout.fragment_d__boy__profile, container, false);
 
-        // ================= ROW 1 : Notifications =================
-        View notifications = view.findViewById(R.id.row_notifications);
-        if (notifications != null) {
+        // ✅ SAFE WAY: pehle view lo, phir listener lagao
+        View llProfileEdit = view.findViewById(R.id.llProfileEdit);
+        View btnNotifications = view.findViewById(R.id.tvNotificationEdit);
+        View btnQR = view.findViewById(R.id.tvQR);
+        View btnSettings = view.findViewById(R.id.tvSettingsEdit);
+        View btnDeleteAcc =view.findViewById(R.id.tvDeleteAcc);
+        View btnLogOut = view.findViewById(R.id.tvLogOut);
+if (llProfileEdit != null) {
+    llProfileEdit.setOnClickListener(v -> {
+        Intent intent = new Intent(getActivity(), D_Boy_ProfileData.class);
+        startActivity(intent);
+    });
 
-            TextView nText = notifications.findViewById(R.id.row_title);
-            if (nText != null) {
-                nText.setText("Notifications");
-            }
+    if (btnNotifications != null) {
+        btnNotifications.setOnClickListener(v -> {
+            Intent intent = new Intent(getActivity(), D_Boy_NotificationActivity.class);
+            startActivity(intent);
+        });
+        if (btnQR!= null) {
+            btnQR.setOnClickListener(v -> {
+                Intent intent = new Intent(getActivity(), QR_code_Activity.class);
+                startActivity(intent);
+            });
 
-            View root = notifications.findViewById(R.id.row_root);
-            if (root != null) {
-                root.setOnClickListener(v ->
-                        Toast.makeText(getActivity(),
-                                "Notifications Clicked",
-                                Toast.LENGTH_SHORT).show()
-                );
-            }
-        }
+            if (btnSettings != null) {
+                btnSettings.setOnClickListener(v -> {
+                    Intent intent = new Intent(getActivity(), D_Boy_settingActivity.class);
+                    startActivity(intent);
+                });
+                if (btnDeleteAcc != null) {
+                    btnDeleteAcc.setOnClickListener(v -> {
+                        Intent intent = new Intent(getActivity(), LoginActivity.class);
+                        startActivity(intent);
+                    });
 
-        // ================= ROW 2 : QR Code =================
-        View qr = view.findViewById(R.id.row_qr);
-        if (qr != null) {
-
-            TextView qrText = qr.findViewById(R.id.row_title);
-            if (qrText != null) {
-                qrText.setText("QR Code");
-            }
-
-            View root = qr.findViewById(R.id.row_root);
-            if (root != null) {
-                root.setOnClickListener(v ->
-                        Toast.makeText(getActivity(),
-                                "QR Code Clicked",
-                                Toast.LENGTH_SHORT).show()
-                );
-            }
-        }
-
-        // ================= ROW 3 : App Settings =================
-        View appSettings = view.findViewById(R.id.row_app_settings);
-        if (appSettings != null) {
-
-            TextView aText = appSettings.findViewById(R.id.row_title);
-            if (aText != null) {
-                aText.setText("App Settings");
-            }
-
-            View root = appSettings.findViewById(R.id.row_root);
-            if (root != null) {
-                root.setOnClickListener(v ->
-                        Toast.makeText(getActivity(),
-                                "App Settings Clicked",
-                                Toast.LENGTH_SHORT).show()
-                );
+                    if (btnLogOut != null) {
+                        btnLogOut.setOnClickListener(v -> showLogoutDialog());
+                    }
+                }
             }
         }
-
+    }
+}
         return view;
+    }
+
+            private void showLogoutDialog () {
+                Dialog dialog = new Dialog(requireContext());
+                dialog.setContentView(R.layout.d_boy_logout_dialog);
+                dialog.getWindow().setBackgroundDrawableResource(android.R.color.white);
+
+                Button btnCancel = dialog.findViewById(R.id.btnCancel);
+                Button btnLogout = dialog.findViewById(R.id.btnLogout);
+
+                btnCancel.setOnClickListener(v -> dialog.dismiss());
+
+                btnLogout.setOnClickListener(v -> {
+                    dialog.dismiss();
+
+                    // TODO: Replace with your login screen
+                    Intent i = new Intent(requireContext(), LoginActivity.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(i);
+                    finish();
+
+                });
+
+                dialog.show();
+            }
+
+        private void finish () {
     }
 }

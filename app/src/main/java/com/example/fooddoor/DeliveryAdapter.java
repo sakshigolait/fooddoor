@@ -1,14 +1,16 @@
 package com.example.fooddoor;
 
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -41,8 +43,19 @@ public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.ViewHo
         holder.txtDrop.setText("Street: " + model.getDropAddress());
         holder.txtTime.setText(model.getTime());
 
+
+        // 🔴 MOST IMPORTANT PART
         holder.btnNext.setOnClickListener(v -> {
-            Toast.makeText(context, "Opening Delivery Details...", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(context, D_Boy_MyLocationActivity.class);
+
+            intent.putExtra("DROP_LAT", model.getDropLat());
+            intent.putExtra("DROP_LNG", model.getDropLng());
+
+            Log.d("SEND_DEST",
+                    "Lat=" + model.getDropLat() +
+                            " Lng=" + model.getDropLng());
+            context.startActivity(intent);
         });
     }
 
@@ -51,7 +64,7 @@ public class DeliveryAdapter extends RecyclerView.Adapter<DeliveryAdapter.ViewHo
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView txtOrderId, txtPayment, txtTotalPayment, txtPickup, txtDrop, txtTime;
         ImageView btnNext;

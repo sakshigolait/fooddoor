@@ -2,6 +2,7 @@ package com.example.fooddoor;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +19,8 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 public class D_Boy_HomeFragment extends Fragment {
 
@@ -65,6 +68,34 @@ public class D_Boy_HomeFragment extends Fragment {
             @Override
             public void onMapReady(@NonNull GoogleMap map) {
                 googleMap = map;
+
+                if (getArguments() != null) {
+
+                    double pickupLat = getArguments().getDouble("pickup_lat");
+                    double pickupLng = getArguments().getDouble("pickup_lng");
+                    double dropLat = getArguments().getDouble("drop_lat");
+                    double dropLng = getArguments().getDouble("drop_lng");
+
+                    LatLng pickup = new LatLng(pickupLat, pickupLng);
+                    LatLng drop = new LatLng(dropLat, dropLng);
+
+                    map.addMarker(new MarkerOptions()
+                            .position(pickup)
+                            .title("Pickup Location"));
+
+                    map.addMarker(new MarkerOptions()
+                            .position(drop)
+                            .title("Drop Location"));
+
+                    map.addPolyline(new PolylineOptions()
+                            .add(pickup, drop)
+                            .width(10)
+                            .color(Color.BLUE));
+
+                    map.animateCamera(
+                            CameraUpdateFactory.newLatLngZoom(pickup, 13f)
+                    );
+                }
 
                 googleMap.getUiSettings().setZoomControlsEnabled(true);
 

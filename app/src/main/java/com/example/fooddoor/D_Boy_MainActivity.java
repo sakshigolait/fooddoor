@@ -1,5 +1,6 @@
 package com.example.fooddoor;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,6 +55,27 @@ public class D_Boy_MainActivity extends AppCompatActivity {
 
             return true;
         });
+    }
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+
+        if (intent.getBooleanExtra("show_route", false)) {
+
+            Bundle bundle = new Bundle();
+            bundle.putDouble("pickup_lat", intent.getDoubleExtra("pickup_lat", 0));
+            bundle.putDouble("pickup_lng", intent.getDoubleExtra("pickup_lng", 0));
+            bundle.putDouble("drop_lat", intent.getDoubleExtra("drop_lat", 0));
+            bundle.putDouble("drop_lng", intent.getDoubleExtra("drop_lng", 0));
+
+            D_Boy_HomeFragment fragment = new D_Boy_HomeFragment();
+            fragment.setArguments(bundle);
+
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.frame_layout, fragment)
+                    .commit();
+        }
     }
 
     private void loadFragment(Fragment fragment) {

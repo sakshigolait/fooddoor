@@ -13,6 +13,7 @@
         <ImageButton
             android:layout_width="50dp"
             android:layout_height="60dp"
+            android:id="@+id/iv_back"
             android:layout_gravity="center"
             android:src="@drawable/arrow_back"/>
     <TextView

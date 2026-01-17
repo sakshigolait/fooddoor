@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.android.libraries.mapsplatform.secrets.gradle.plugin)
-    alias(libs.plugins.google.services)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -38,23 +38,24 @@ android {
 
 dependencies {
 
-    implementation("androidx.recyclerview:recyclerview:1.4.0")
     implementation("com.facebook.android:facebook-login:16.3.0")
+    implementation ("com.google.firebase:firebase-auth:23.0.0")
     implementation ("com.google.android.gms:play-services-auth:21.0.0")
-    implementation ("androidx.viewpager2:viewpager2:1.1.0")
-    implementation ("com.google.android.material:material:1.12.0")
     implementation ("com.google.android.gms:play-services-location:21.0.1")
+    implementation ("de.hdodenhof:circleimageview:3.1.0")
+    implementation ("androidx.recyclerview:recyclerview:1.3.2")
+    implementation ("com.google.android.material:material:1.11.0")
+    implementation ("com.google.android.material:material:1.12.0")
+
+    implementation ("com.google.android.material:material:1.9.0")
+    implementation ("androidx.appcompat:appcompat:1.6.1")
+    implementation ("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation ("androidx.viewpager2:viewpager2:1.1.0")
+
+
     implementation ("com.google.android.gms:play-services-maps:18.1.0")
 
-    implementation ("com.github.bumptech.glide:glide:4.12.0")
-
-    implementation("com.github.denzcoskun:ImageSlideshow:0.1.2")
-    implementation ("de.hdodenhof:circleimageview:3.1.0")
-
-    implementation ("androidx.fragment:fragment:1.8.4")
-
-    implementation(platform("com.google.firebase:firebase-bom:33.4.0"))
-    implementation("com.google.firebase:firebase-auth")
+    implementation ("com.github.denzcoskun:ImageSlideshow:0.1.2")
 
 
     implementation(libs.appcompat)
@@ -65,5 +66,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-
 }
